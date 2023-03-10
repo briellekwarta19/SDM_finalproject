@@ -265,3 +265,26 @@ colnames(min_downstream)[3] <- ("Estimated state")
 colnames(min_downstream)[1] <- c("Alternative")
 
 min_downstream
+
+
+#### Pareto optimal ####
+PO_dat <- data.frame(min_downstream$Alternative, min_downstream$`True state`, c(10000,5000,0,10000,5000,0))
+colnames(PO_dat) <- c("Alternative", "MinP", "MinC")
+PO_dat$Alternative <- as.factor(c(1,2,3,4,5,6))
+PO_dat$MinP <- PO_dat$MinP-1
+
+PO_dat$col <- c("purple", "green", "green", "purple", "purple", "purple")
+PO_dat$dom <- c("dominated", "not dominated", "not dominated", "dominated", "dominated", "dominated")
+
+ggplot(PO_dat) +
+  geom_point(mapping = aes(x = MinP, y = MinC, color = dom),size = 5) +
+  scale_color_manual(values=c("purple", "green"))+
+  xlab("Minimize downstream presence") +
+  ylab("Minimize monitoring cost ($/year)")+
+  theme_grey(base_size = 18)
+
+
+
+
+
+
