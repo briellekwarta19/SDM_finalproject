@@ -1,7 +1,7 @@
 # SDM_finalproject
 Final project for structured decision making class at the University of Washington
 
-The final project used structured decision making to decide (theoretical) monitoring and management for flowering rush in the Columbia River.
+The final project used structured decision making to decide (theoretical) monitoring and management of flowering rush in the Columbia River.
 
 The repo is organized into the following folders: 
 1. reports: where the final report and presentation are located
